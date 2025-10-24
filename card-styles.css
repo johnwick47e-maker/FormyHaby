@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+:root{--purple:#6a4cff;--mint:#7ee0c7;--blue:#60a5ff;--card:#ffffff;--muted:#6b7280}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,system-ui,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#f7fbff,#eef8ff);display:flex;align-items:center;justify-content:center;height:100vh;margin:0}
+.card-print{width:540px;background:var(--card);border-radius:14px;padding:28px;box-shadow:0 10px 30px rgba(12,18,46,0.08);text-align:center}
+.card-print h1{color:var(--purple);margin:0;font-size:34px}
+.sub{color:var(--muted);margin-top:6px}
+.content{margin-top:18px}
+.message{font-size:16px;color:#0f172a}
+.qr-wrap{margin:18px auto}
+.qr-wrap img{width:220px;height:220px;border-radius:12px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.note{margin-top:10px;color:var(--muted)}
+.foot-muted{font-size:13px;color:var(--muted);margin-top:18px}
+@media print{body{background:white} .card-print{box-shadow:none;border:1px solid #eee}}

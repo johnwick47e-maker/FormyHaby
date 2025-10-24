@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For Haby — A Small Journey</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <h1>For Haby</h1>
+      <p class="subtitle">Let's play a game! 🎮</p>
+      <p class="hint">Complete all 3 fun challenges!</p>
+    </header>
+
+    <section id="step1" class="card">
+      <h2>Step 1 — Reveal Your Smile</h2>
+      <p class="muted">Arrange the pieces to complete the photo. Drag tiles to swap them.</p>
+      <div id="puzzle" class="puzzle" aria-label="photo puzzle" tabindex="0"></div>
+      <button id="resetPuzzle" class="btn small">Shuffle</button>
+    </section>
+
+    <section id="step2" class="card hidden">
+      <h2>Step 2 — Arrange the hearts</h2>
+      <p class="muted">Drag each heart into the correct slot to form the final pattern.</p>
+      <div id="heartsArea" class="hearts-area">
+        <div class="draggables" id="draggables"></div>
+        <div class="targets" id="targets"></div>
+      </div>
+    </section>
+
+    <section id="step3" class="card hidden">
+      <h2>Step 3 — Heart Catcher</h2>
+      <p class="muted">Catch as many floating hearts as you can in 12 seconds. Try to catch at least 8!</p>
+      <div id="gameArea" class="game-area">
+        <div id="timer" class="timer">12</div>
+        <div id="heartsContainer" class="hearts-container"></div>
+      </div>
+      <div class="game-controls">
+        <button id="startGame" class="btn small">Start</button>
+        <div id="gameResult" class="muted"></div>
+      </div>
+    </section>
+
+    <section id="final" class="card hidden">
+      <h2>You did it! 🎉</h2>
+      <p class="muted">A special gift is waiting for you...</p>
+      <div class="reveal">
+        <div class="message">
+          <h3>Click the button below to open your gift</h3>
+          <p>Everything you completed was made with love ❤️</p>
+        </div>
+      </div>
+      <button id="openReward" class="btn primary-btn" style="margin:20px auto;display:block;font-size:18px;padding:12px 24px;">
+        <span style="display:inline-block;transform:translateY(-1px)">Open Your Gift</span> 
+        <span style="font-size:24px;display:inline-block;margin-left:8px">🎁</span>
+      </button>
+    </section>
+
+    <!-- Reward overlay: full-screen animated gift -> plays playlist and shows slideshow -->
+    <div id="rewardOverlay" class="reward-overlay hidden" aria-hidden="true">
+      <div class="reward-content">
+        <div class="gift-animation" id="giftAnimation">
+          <h2 style="color:var(--purple);margin-bottom:20px;font-size:32px">✨ Your Special Gift ✨</h2>
+          <div class="gift-box">
+            <div class="ribbon"></div>
+          </div>
+          <p style="margin:15px 0;color:var(--muted);font-size:16px">Click the gift to see what's inside</p>
+          <button id="claimReward" class="btn gift-btn">Open the gift 🎁</button>
+        </div>
+
+        <div id="playerArea" class="player-area hidden">
+          <div id="slideshow" class="slideshow"></div>
+          <div class="player-controls">
+            <button id="pausePlay" class="btn small">Pause</button>
+            <button id="nextMedia" class="btn small">Next</button>
+            <button id="closeReward" class="btn small">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- audio elements are shown above in the final reveal; the script will also set their src from media-manifest.json -->
+
+    <footer class="foot muted">Made with care • Colors: purple • mint • blue</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="slideshow-core.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
